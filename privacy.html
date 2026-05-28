@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — MailOnCall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #080808; color: #f0ede8; line-height: 1.7; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.07); background: rgba(8,8,8,0.95); position: sticky; top: 0; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-icon { width: 32px; height: 32px; border-radius: 8px; background: #E8432D; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .logo-text { font-size: 16px; font-weight: 600; color: #f0ede8; }
+  .container { max-width: 760px; margin: 0 auto; padding: 60px 5%; }
+  h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+  .meta { color: #555; font-size: 14px; margin-bottom: 48px; }
+  h2 { font-size: 20px; font-weight: 600; margin: 40px 0 12px; color: #f0ede8; }
+  p { color: #888; margin-bottom: 16px; font-size: 15px; }
+  ul { color: #888; margin: 0 0 16px 20px; font-size: 15px; }
+  li { margin-bottom: 8px; }
+  a { color: #E8432D; }
+  footer { text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.07); color: #555; font-size: 13px; margin-top: 60px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">⚡</div>
+    <span class="logo-text">MailOnCall</span>
+  </a>
+  <a href="/" style="color: #888; text-decoration: none; font-size: 14px;">← Back to home</a>
+</nav>
+
+<div class="container">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: May 28, 2026</p>
+
+  <h2>1. Information We Collect</h2>
+  <p>We collect the following information when you use MailOnCall:</p>
+  <ul>
+    <li>Account information (name, email address, password hash)</li>
+    <li>Phone numbers you provide for call alerts</li>
+    <li>Alert rules you create (sender filters, keywords)</li>
+    <li>Call and notification history</li>
+    <li>Microsoft OAuth tokens (encrypted, for Outlook access)</li>
+    <li>Billing information (processed securely by Stripe)</li>
+  </ul>
+
+  <h2>2. Information We Do NOT Collect</h2>
+  <p>We do not store the content of your emails. We only access email metadata (sender, subject) to match your alert rules. Email content is never stored on our servers.</p>
+
+  <h2>3. How We Use Your Information</h2>
+  <ul>
+    <li>To provide the MailOnCall service</li>
+    <li>To send automated phone calls when your rules are triggered</li>
+    <li>To send service emails (receipts, alerts, account notices)</li>
+    <li>To improve and maintain the Service</li>
+  </ul>
+
+  <h2>4. Data Storage and Security</h2>
+  <p>Your data is stored in a secure PostgreSQL database hosted on Render (Singapore region). We implement industry-standard security measures including bcrypt password hashing, JWT authentication, TLS encryption, and HMAC API key verification.</p>
+
+  <h2>5. Microsoft Data</h2>
+  <p>When you connect your Outlook account, we receive OAuth tokens from Microsoft to access your inbox. These tokens are encrypted and stored securely. We only read email metadata necessary to match your alert rules. You can disconnect your Outlook account at any time from your dashboard.</p>
+
+  <h2>6. Third-Party Services</h2>
+  <p>We use the following third-party services:</p>
+  <ul>
+    <li><strong>Stripe</strong> — payment processing</li>
+    <li><strong>Twilio</strong> — phone call delivery</li>
+    <li><strong>Microsoft Graph API</strong> — Outlook integration</li>
+    <li><strong>Resend</strong> — transactional emails</li>
+    <li><strong>Render</strong> — hosting and database</li>
+  </ul>
+
+  <h2>7. Data Retention</h2>
+  <p>We retain your data for as long as your account is active. When you delete your account, your personal data is permanently deleted within 30 days.</p>
+
+  <h2>8. Your Rights</h2>
+  <p>You have the right to access, correct, or delete your personal data at any time. Contact us at <a href="mailto:admin@mailoncall.net">admin@mailoncall.net</a> to exercise these rights.</p>
+
+  <h2>9. Cookies</h2>
+  <p>We use session storage and local storage for authentication. We do not use tracking cookies or third-party advertising cookies.</p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>We may update this policy from time to time. We will notify you of significant changes via email.</p>
+
+  <h2>11. Contact</h2>
+  <p>For privacy questions or concerns, contact us at <a href="mailto:admin@mailoncall.net">admin@mailoncall.net</a></p>
+</div>
+
+<footer>© 2026 MailOnCall. All rights reserved.</footer>
+</body>
+</html>
