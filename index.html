@@ -649,6 +649,117 @@
   .footer-copy {
     font-size: 12px; color: var(--muted2);
   }
+/* FAQ SECTION */
+  .faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .faq-category {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .faq-category-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    padding: 20px 28px;
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    letter-spacing: 0.01em;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 28px;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .faq-question:hover {
+    color: var(--red);
+    background: rgba(232,67,45,0.04);
+  }
+
+  .faq-question.open {
+    color: var(--red);
+  }
+
+  .faq-icon {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    line-height: 1;
+  }
+
+  .faq-question.open .faq-icon {
+    transform: rotate(45deg);
+    color: var(--red);
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 0 28px 24px;
+    animation: fadeDown 0.2s ease;
+  }
+
+  .faq-answer.open {
+    display: block;
+  }
+
+  .faq-answer p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .faq-answer ul, .faq-answer ol {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .faq-answer strong {
+    color: var(--text);
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .faq-question { padding: 16px 20px; font-size: 14px; }
+    .faq-answer { padding: 0 20px 20px; }
+    .faq-category-title { padding: 16px 20px; }
+  }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
@@ -685,6 +796,7 @@
 <li><a href="#features">Features</a></li>
     <li><a href="#teams">For Teams</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-cta">
     <a href="https://app.mailoncall.net/login" class="btn-ghost">Sign in</a>
@@ -977,6 +1089,152 @@
     </div>
   </div>
 </section>
+<!-- FAQ -->
+<section id="faq" style="max-width:1200px; margin:0 auto; padding: 100px 5%;">
+  <div class="fade-in" style="margin-bottom: 56px; text-align: center;">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Frequently asked questions</h2>
+    <p class="section-sub" style="margin: 0 auto;">Everything you need to know about MailOnCall. Can't find the answer? <a href="mailto:admin@mailoncall.net" style="color: var(--red); text-decoration: none;">Contact us →</a></p>
+  </div>
+
+  <div class="faq-grid fade-in">
+
+    <div class="faq-category">
+      <h3 class="faq-category-title">🚀 Getting Started</h3>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Does MailOnCall work with Gmail or only Outlook?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Currently MailOnCall is built exclusively for <strong>Microsoft Outlook</strong> — including personal Outlook accounts (outlook.com, hotmail.com) and business Microsoft 365 accounts. Gmail support is not available at this time. We integrate directly via the Microsoft Graph API, which provides secure, real-time email monitoring.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How do I set up my first alert rule?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Setting up takes under 5 minutes:</p><ol style="margin: 8px 0 0 16px; line-height: 2;"><li>Sign up at <strong>app.mailoncall.net</strong></li><li>Connect your Outlook account via Microsoft OAuth</li><li>Go to <strong>Alert Rules</strong> and click <strong>Create rule</strong></li><li>Set your conditions — sender email, subject keywords, etc.</li><li>Enter your phone number and save</li><li>Use the <strong>Test</strong> button to verify it works</li></ol></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do I need to install anything?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>No downloads or installations required. MailOnCall is entirely web-based — access your dashboard from any browser at <strong>app.mailoncall.net</strong>. Calls are delivered to your existing phone number, so no app is needed on your phone either.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3 class="faq-category-title">📞 How It Works</h3>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How quickly does the phone call arrive after an email?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>MailOnCall uses Microsoft Graph API webhooks to detect emails in real time — typically <strong>within 10 seconds</strong> of the email arriving in your inbox. Once detected, Twilio places the call immediately. Total time from email arrival to your phone ringing is usually <strong>under 30 seconds</strong>.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What happens if I miss the call or don't answer?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>That depends on your plan:</p><ul style="margin: 8px 0 0 16px; line-height: 2;"><li><strong>Starter:</strong> One call attempt, no retries</li><li><strong>Pro:</strong> Up to 3 retry attempts at 5-minute intervals</li><li><strong>Team/Business:</strong> Custom retry intervals + escalation to secondary and tertiary contacts</li></ul><p style="margin-top: 8px;">If the call goes to voicemail, MailOnCall detects this automatically and treats it as a missed call — retries will still fire if enabled.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What does the phone call say?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>The call plays an automated voice message that includes the sender's email address and the subject line of the email. The message uses Amazon Polly's natural-sounding text-to-speech voice so it's clear and easy to understand.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I stop retries once I've seen the email?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — when an SMS alert is sent alongside the call, it includes a one-tap <strong>Acknowledge</strong> link. Tapping it immediately stops all further retries for that alert. Available on Pro, Team and Business plans.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Does it work 24/7 including weekends and public holidays?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — MailOnCall monitors your inbox <strong>continuously, 24 hours a day, 7 days a week</strong>, including weekends and public holidays. There is no downtime or scheduled maintenance window that affects monitoring.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3 class="faq-category-title">⚙️ Alert Rules</h3>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What conditions can I set for alert rules?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>You can filter emails by:</p><ul style="margin: 8px 0 0 16px; line-height: 2;"><li><strong>Sender email</strong> — alert only when email is from a specific address</li><li><strong>Sender domain</strong> — alert for any email from @supplier.com</li><li><strong>Subject keywords</strong> — alert when subject contains "URGENT" or "Invoice"</li><li><strong>Body keywords</strong> — alert when body contains specific phrases</li></ul><p style="margin-top: 8px;">Combine multiple conditions using AND or OR logic for precise filtering.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How many alert rules can I create?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>It depends on your plan:</p><ul style="margin: 8px 0 0 16px; line-height: 2;"><li><strong>Starter (Free):</strong> Up to 3 alert rules</li><li><strong>Pro, Team, Business:</strong> Unlimited alert rules</li></ul></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I temporarily pause a rule without deleting it?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — every rule has a toggle switch in the dashboard. Turn it off to pause monitoring for that rule, and turn it back on whenever you're ready. Paused rules don't fire alerts but count toward your plan limit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I test a rule before it goes live?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — every alert rule has a <strong>Test</strong> button (▷) in the dashboard. Clicking it sends a test call and SMS to your configured number immediately, so you can verify everything works before relying on it for real alerts.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3 class="faq-category-title">🔒 Security & Privacy</h3>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is my email content stored by MailOnCall?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p><strong>No — MailOnCall does not store your email content.</strong> When a matching email is detected, we read only the sender address and subject line to generate the voice message. This data is used in real time and not persisted. We never read, store or process the body of your emails beyond checking for keyword matches.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How does MailOnCall access my Outlook inbox?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>MailOnCall uses <strong>Microsoft OAuth 2.0</strong> — the same secure standard used by thousands of business applications. You log in with your Microsoft account and grant specific read-only permissions. Your password is <strong>never shared with or stored by MailOnCall</strong>. You can revoke access at any time from your Microsoft account settings.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">My company's IT admin needs to approve the app. How do I handle this?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Some corporate Microsoft 365 environments require IT admin approval before third-party apps can connect. Simply send your IT admin this one-click approval link — they can approve MailOnCall for your entire organisation in seconds:</p><a href="https://login.microsoftonline.com/common/adminconsent?client_id=6c5a1107-05aa-4989-b416-7621b2c9bde6" style="display:inline-block;margin-top:8px;padding:8px 16px;background:var(--red-soft);border:1px solid rgba(232,67,45,0.3);border-radius:7px;color:var(--red);font-size:13px;text-decoration:none;">Request admin approval →</a></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is MailOnCall secure for corporate use?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes. MailOnCall is built with enterprise-grade security including OAuth 2.0 via Microsoft, TLS/HTTPS encryption, bcrypt password hashing, JWT authentication, rate limiting on all API endpoints, and no email content stored.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3 class="faq-category-title">💳 Plans & Billing</h3>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is the Starter plan really free forever?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — the Starter plan is <strong>completely free with no time limit</strong> and no credit card required. You get 1 mailbox and up to 3 alert rules at no cost. Upgrade anytime when you need more features.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I cancel my subscription anytime?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — cancel anytime with no lock-in contracts or cancellation fees. Go to <strong>Settings → Billing &amp; Plan → Manage billing</strong> to cancel. Your plan remains active until the end of your current billing period, then automatically drops to the free Starter plan.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What happens to my rules and data if I downgrade?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>When you downgrade, MailOnCall automatically enforces the limits of your new plan — excess rules are deleted, excess mailboxes disconnected, and excess team members removed. We recommend reviewing your configuration before downgrading to choose which rules to keep.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Are prices in Australian Dollars?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — all prices are in <strong>Australian Dollars (AUD)</strong>. GST is not included in the displayed prices. International customers are charged in AUD and their bank will convert at the prevailing exchange rate.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do you offer refunds?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>We do not offer refunds for partial months. If you cancel mid-cycle, your access continues until the end of the billing period. If you experience a technical issue preventing use of the service, contact us at <a href="mailto:admin@mailoncall.net" style="color:var(--red);">admin@mailoncall.net</a> and we'll review your case.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3 class="faq-category-title">👥 Teams & Business</h3>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can multiple people receive calls from the same alert?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — on Team and Business plans you can configure escalation chains with primary, secondary and tertiary contacts. If the primary contact doesn't answer, the call automatically escalates to the next person. You can also set up on-call rosters so the right person is always called based on day and time.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I connect a shared Outlook mailbox?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — Team and Business plans support connecting shared Outlook mailboxes (e.g. helpdesk@company.com or oncall@company.com). One connection covers the entire shared inbox, and you can configure different alert rules and on-call rosters for it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Does MailOnCall work internationally?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — MailOnCall is powered by Twilio which supports phone calls to <strong>180+ countries worldwide</strong>. You can receive alerts on any phone number globally. The service itself is accessible from anywhere with an internet connection.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I delete my account and all my data?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes — go to <strong>Settings → Your Data → Delete account</strong>. Your account will be scheduled for permanent deletion after a 30-day cooling period, in compliance with GDPR Article 17 (Right to Erasure). All data including rules, call history and personal information will be permanently deleted.</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fade-in" style="margin-top:64px;text-align:center;padding:40px;background:#111114;border:1px solid #1e1e22;border-radius:16px;">
+    <h3 style="font-size:20px;font-weight:600;margin-bottom:8px;">Still have questions?</h3>
+    <p style="color:var(--muted);font-size:15px;margin-bottom:24px;">We're happy to help. Reach out and we'll get back to you as soon as possible.</p>
+    <a href="mailto:admin@mailoncall.net" class="btn-primary" style="padding:12px 28px;font-size:15px;">Contact us →</a>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section>
 
 <!-- CTA -->
 <section>
@@ -998,6 +1256,7 @@
     <li><a href="#features">Features</a></li>
 <li><a href="#teams">For Teams</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="https://app.mailoncall.net/login">Sign in</a></li>
     <li><a href="/terms.html">Terms</a></li>
     <li><a href="/privacy.html">Privacy</a></li>
@@ -1011,6 +1270,21 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // Close all open items
+    document.querySelectorAll('.faq-question.open').forEach(q => {
+      q.classList.remove('open');
+      q.nextElementSibling.classList.remove('open');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
 </script>
 
 </body>
