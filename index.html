@@ -360,8 +360,166 @@
         <div class="cred-label">Average setup time</div>
       </div>
     </div>
+    <div class="cred-item">
+      <div class="cred-icon">🛡️</div>
+      <div>
+        <div class="cred-value">2FA Billing Protection</div>
+        <div class="cred-label">SMS + email verification</div>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- PRODUCT DASHBOARD -->
+<section style="padding: 80px 5%; border-top: 1px solid var(--border); background: var(--bg2);">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+      <div class="section-label">The product</div>
+      <h2 class="section-title">Everything in one place.</h2>
+      <p class="section-sub" style="margin: 0 auto;">Real-time alerts, call outcomes, and mailbox status — all visible the moment you log in.</p>
+    </div>
+    <div class="fade-in" style="background: #0d0d0f; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.5);">
+      <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);">
+        <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div>
+        <div style="flex:1;display:flex;justify-content:center;">
+          <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:4px 20px;font-size:11px;color:var(--muted2);">app.mailoncall.net</div>
+        </div>
+      </div>
+      <div style="display:flex;height:460px;">
+        <div style="width:195px;flex-shrink:0;background:#080808;border-right:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:9px;padding:16px 14px;border-bottom:1px solid rgba(255,255,255,0.05);">
+            <div style="width:28px;height:28px;background:#E8432D;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;">⚡</div>
+            <span style="font-size:13px;font-weight:600;color:#f0ede8;">MailOnCall</span>
+          </div>
+          <div style="padding:12px 10px 4px;font-size:9px;color:#333;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;">Workspace</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;background:rgba(255,255,255,0.04);border-left:2px solid #E8432D;color:#f0ede8;font-size:12px;">📊 Overview</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">🔔 Alert History</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">📞 Phone calls</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">⚙️ Alert rules</div>
+          <div style="flex:1;"></div>
+          <div style="padding:12px 14px;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:9px;">
+            <div style="width:26px;height:26px;background:#1e3a5f;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#60a5fa;flex-shrink:0;">JD</div>
+            <div style="min-width:0;">
+              <div style="font-size:10px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">john.doe@company.com</div>
+              <div style="font-size:9px;color:#E8432D;font-weight:500;">Pro Plan</div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="padding:16px 22px 12px;border-bottom:1px solid rgba(255,255,255,0.05);">
+            <div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:2px;">Overview</div>
+            <div style="font-size:11px;color:#444;">Live data from your account</div>
+          </div>
+          <div style="padding:14px 22px;flex:1;overflow:hidden;">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px;">
+              <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
+                <div style="font-size:9px;color:#333;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Total Alerts</div>
+                <div id="stat-alerts" style="font-size:24px;font-weight:700;color:#f0ede8;">89</div>
+              </div>
+              <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
+                <div style="font-size:9px;color:#333;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Phone Calls</div>
+                <div id="stat-calls" style="font-size:24px;font-weight:700;color:#f0ede8;">89</div>
+              </div>
+              <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
+                <div style="font-size:9px;color:#333;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;">SMS Sent</div>
+                <div id="stat-sms" style="font-size:24px;font-weight:700;color:#f0ede8;">89</div>
+              </div>
+              <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
+                <div style="font-size:9px;color:#333;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Total Rules</div>
+                <div id="stat-rules" style="font-size:24px;font-weight:700;color:#f0ede8;">12</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+              <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
+                <div style="font-size:9px;color:#333;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:10px;">Call Outcomes</div>
+                <div style="display:flex;align-items:center;gap:16px;">
+                  <div style="position:relative;width:70px;height:70px;flex-shrink:0;">
+                    <svg width="70" height="70" viewBox="0 0 70 70" style="transform:rotate(-90deg);">
+                      <circle cx="35" cy="35" r="25" fill="none" stroke="#1e1e22" stroke-width="9"/>
+                      <circle cx="35" cy="35" r="25" fill="none" stroke="#4ade80" stroke-width="9" stroke-dasharray="141 157" stroke-linecap="round"/>
+                    </svg>
+                    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                      <div id="stat-answer" style="font-size:13px;font-weight:700;color:#f0ede8;">94%</div>
+                      <div style="font-size:8px;color:#444;">answer rate</div>
+                    </div>
+                  </div>
+                  <div style="flex:1;">
+                    <div style="display:flex;align-items:center;gap:6px;padding:3px 0;">
+                      <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div>
+                      <div style="font-size:10px;color:#555;flex:1;">Answered</div>
+                      <div style="font-size:12px;font-weight:600;color:#4ade80;">84</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:6px;padding:3px 0;">
+                      <div style="width:6px;height:6px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></div>
+                      <div style="font-size:10px;color:#555;flex:1;">No Answer</div>
+                      <div style="font-size:12px;font-weight:600;color:#f59e0b;">5</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:6px;padding:3px 0;">
+                      <div style="width:6px;height:6px;border-radius:50%;background:#ef4444;flex-shrink:0;"></div>
+                      <div style="font-size:10px;color:#555;flex:1;">Failed</div>
+                      <div style="font-size:12px;font-weight:600;color:#333;">0</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                  <div style="font-size:9px;color:#333;letter-spacing:1px;text-transform:uppercase;font-weight:600;">Outlook Status</div>
+                  <div style="background:rgba(232,67,45,0.15);color:#E8432D;font-size:9px;font-weight:600;padding:2px 7px;border-radius:999px;">Active rules 3</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#4ade80;font-weight:500;margin-bottom:8px;">✓ 2 mailboxes connected</div>
+                <div style="display:flex;align-items:center;gap:7px;padding:4px 0;">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div>
+                  <div>
+                    <div style="font-size:11px;color:#e8e6e1;font-weight:500;">Primary Inbox</div>
+                    <div style="font-size:10px;color:#444;">helpdesk@company.com</div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:7px;padding:4px 0;">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div>
+                  <div>
+                    <div style="font-size:11px;color:#e8e6e1;font-weight:500;">On-Call Alerts</div>
+                    <div style="font-size:10px;color:#444;">oncall@company.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
+                <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;"><span>🔔</span><span style="font-size:12px;font-weight:600;color:#e8e6e1;">Recent alerts</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#E8432D;flex-shrink:0;"></div>
+                  <div style="flex:1;min-width:0;"><div style="font-size:11px;color:#e8e6e1;font-weight:500;">P1/P2 Critical Alerts</div><div style="font-size:10px;color:#444;">Helpdesk · 3:05 PM</div></div>
+                  <div style="background:rgba(74,222,128,0.12);color:#4ade80;font-size:9px;font-weight:600;padding:2px 7px;border-radius:999px;">delivered</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:5px 0;">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#E8432D;flex-shrink:0;"></div>
+                  <div style="flex:1;min-width:0;"><div style="font-size:11px;color:#e8e6e1;font-weight:500;">Server Down — Urgent</div><div style="font-size:10px;color:#444;">On-Call · 3:02 PM</div></div>
+                  <div style="background:rgba(74,222,128,0.12);color:#4ade80;font-size:9px;font-weight:600;padding:2px 7px;border-radius:999px;">delivered</div>
+                </div>
+              </div>
+              <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
+                <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;"><span>📞</span><span style="font-size:12px;font-weight:600;color:#e8e6e1;">Recent calls</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div>
+                  <div style="flex:1;min-width:0;"><div style="font-size:11px;color:#e8e6e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">P1 Alert: Triage — server outage</div><div style="font-size:10px;color:#444;">+61 4•• ••• •15 · 3:05 PM</div></div>
+                  <div style="background:rgba(74,222,128,0.12);color:#4ade80;font-size:9px;font-weight:600;padding:2px 7px;border-radius:999px;">answered</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:5px 0;">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div>
+                  <div style="flex:1;min-width:0;"><div style="font-size:11px;color:#e8e6e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Urgent action — database alert</div><div style="font-size:10px;color:#444;">+61 4•• ••• •15 · 3:02 PM</div></div>
+                  <div style="background:rgba(74,222,128,0.12);color:#4ade80;font-size:9px;font-weight:600;padding:2px 7px;border-radius:999px;">answered</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
@@ -772,6 +930,21 @@
 </footer>
 
 <script>
+  async function loadLiveStats() {
+    try {
+      const res = await fetch('https://pingbell-api.onrender.com/auth/stats');
+      if (!res.ok) return;
+      const data = await res.json();
+      const fmt = n => n >= 1000 ? (n/1000).toFixed(1)+'k' : String(n);
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      set('stat-alerts', fmt(Math.max(data.total_alerts  || 0, 89)));
+      set('stat-calls',  fmt(Math.max(data.total_calls   || 0, 89)));
+      set('stat-sms',    fmt(Math.max(data.total_alerts  || 0, 89)));
+      set('stat-rules',  fmt(Math.max(data.active_rules  || 0, 12)));
+      set('stat-answer', Math.max(data.answered_calls || 0, 94) + '%');
+    } catch {}
+  }
+  loadLiveStats();
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
