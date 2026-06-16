@@ -322,53 +322,234 @@
   </div>
 </section>
 
-<!-- CREDIBILITY BAR -->
-<div class="cred-bar">
-  <div class="cred-inner">
+```html
+<!-- Floating Credibility Bar -->
+<div class="cred-floating">
+  <div class="cred-track">
+
+    <!-- First Set -->
     <div class="cred-item">
-      <div class="cred-icon">⚡</div>
+      <span class="cred-icon">⚡</span>
       <div>
-        <div class="cred-value">Under 10 seconds</div>
+        <div class="cred-value">Under 10 Seconds</div>
         <div class="cred-label">Call delivery time</div>
       </div>
     </div>
+
     <div class="cred-item">
-      <div class="cred-icon">🔒</div>
+      <span class="cred-icon">🔒</span>
       <div>
         <div class="cred-value">OAuth 2.0</div>
         <div class="cred-label">Microsoft-secured access</div>
       </div>
     </div>
+
     <div class="cred-item">
-      <div class="cred-icon">📞</div>
+      <span class="cred-icon">📞</span>
       <div>
         <div class="cred-value">Powered by Twilio</div>
         <div class="cred-label">Global call coverage</div>
       </div>
     </div>
+
     <div class="cred-item">
-      <div class="cred-icon">🖥️</div>
+      <span class="cred-icon">🖥️</span>
       <div>
         <div class="cred-value">Microsoft Graph API</div>
         <div class="cred-label">Direct Outlook integration</div>
       </div>
     </div>
+
     <div class="cred-item">
-      <div class="cred-icon">⏱️</div>
+      <span class="cred-icon">⏱️</span>
       <div>
-        <div class="cred-value">5 minutes</div>
+        <div class="cred-value">5 Minutes</div>
         <div class="cred-label">Average setup time</div>
       </div>
     </div>
+
     <div class="cred-item">
-      <div class="cred-icon">🛡️</div>
+      <span class="cred-icon">🛡️</span>
       <div>
-        <div class="cred-value">2FA Billing Protection</div>
-        <div class="cred-label">SMS + email verification</div>
+        <div class="cred-value">2FA Protection</div>
+        <div class="cred-label">SMS + Email verification</div>
       </div>
     </div>
+
+    <!-- Duplicate Set for Infinite Scroll -->
+    <div class="cred-item">
+      <span class="cred-icon">⚡</span>
+      <div>
+        <div class="cred-value">Under 10 Seconds</div>
+        <div class="cred-label">Call delivery time</div>
+      </div>
+    </div>
+
+    <div class="cred-item">
+      <span class="cred-icon">🔒</span>
+      <div>
+        <div class="cred-value">OAuth 2.0</div>
+        <div class="cred-label">Microsoft-secured access</div>
+      </div>
+    </div>
+
+    <div class="cred-item">
+      <span class="cred-icon">📞</span>
+      <div>
+        <div class="cred-value">Powered by Twilio</div>
+        <div class="cred-label">Global call coverage</div>
+      </div>
+    </div>
+
+    <div class="cred-item">
+      <span class="cred-icon">🖥️</span>
+      <div>
+        <div class="cred-value">Microsoft Graph API</div>
+        <div class="cred-label">Direct Outlook integration</div>
+      </div>
+    </div>
+
+    <div class="cred-item">
+      <span class="cred-icon">⏱️</span>
+      <div>
+        <div class="cred-value">5 Minutes</div>
+        <div class="cred-label">Average setup time</div>
+      </div>
+    </div>
+
+    <div class="cred-item">
+      <span class="cred-icon">🛡️</span>
+      <div>
+        <div class="cred-value">2FA Protection</div>
+        <div class="cred-label">SMS + Email verification</div>
+      </div>
+    </div>
+
   </div>
 </div>
+```
+
+```css
+/* Floating Container */
+.cred-floating {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, calc(100% - 40px));
+  z-index: 9999;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* Glass Effect */
+.cred-floating::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 20px;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.15),
+    0 0 0 1px rgba(255,255,255,.3);
+}
+
+/* Scrolling Track */
+.cred-track {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: max-content;
+  padding: 18px 30px;
+  animation: scrollCreds 35s linear infinite;
+}
+
+/* Pause on Hover */
+.cred-floating:hover .cred-track {
+  animation-play-state: paused;
+}
+
+/* Individual Item */
+.cred-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.cred-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.cred-value {
+  font-weight: 700;
+  color: #111827;
+  font-size: 14px;
+}
+
+.cred-label {
+  color: #6b7280;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Infinite Scroll */
+@keyframes scrollCreds {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .cred-floating {
+    bottom: 12px;
+    width: calc(100% - 20px);
+  }
+
+  .cred-track {
+    gap: 30px;
+    padding: 14px 20px;
+    animation-duration: 25s;
+  }
+
+  .cred-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .cred-value {
+    font-size: 13px;
+  }
+
+  .cred-label {
+    font-size: 11px;
+  }
+}
+```
 
 <!-- PRODUCT DASHBOARD -->
 <section style="padding: 80px 5%; border-top: 1px solid var(--border); background: var(--bg2);">
@@ -949,6 +1130,7 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  
 // ── Incident log animation ───────────────────────────────────────────────
   function animateLog() {
     const entries = document.querySelectorAll('.log-entry');
@@ -971,7 +1153,7 @@
     setTimeout(next, 400);
   }
   animateLog();
-  
+
   function toggleFaq(btn) {
     const answer = btn.nextElementSibling;
     const isOpen = btn.classList.contains('open');
