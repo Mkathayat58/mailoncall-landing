@@ -949,7 +949,29 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
+// ── Incident log animation ───────────────────────────────────────────────
+  function animateLog() {
+    const entries = document.querySelectorAll('.log-entry');
+    const bar     = document.querySelector('.log-response-bar');
+    if (!entries.length) return;
+    entries.forEach(e => e.style.opacity = '0');
+    if (bar) bar.style.opacity = '0';
+    let i = 0;
+    const next = () => {
+      if (i < entries.length) {
+        entries[i].style.transition = 'opacity 0.4s ease';
+        entries[i].style.opacity = '1';
+        i++;
+        setTimeout(next, 900);
+      } else {
+        if (bar) { bar.style.transition = 'opacity 0.4s ease'; bar.style.opacity = '1'; }
+        setTimeout(animateLog, 3500);
+      }
+    };
+    setTimeout(next, 400);
+  }
+  animateLog();
+  
   function toggleFaq(btn) {
     const answer = btn.nextElementSibling;
     const isOpen = btn.classList.contains('open');
