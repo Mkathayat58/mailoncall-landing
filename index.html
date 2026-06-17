@@ -293,6 +293,20 @@
   .footer-legal a { font-size: 12px; color: var(--muted2); text-decoration: none; transition: color 0.2s; }
   .footer-legal a:hover { color: var(--muted); }
 
+ /* ── TESTIMONIALS ── */
+  .t-track:hover { animation-play-state: paused; }
+  @keyframes t-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .t-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; width: 340px; flex-shrink: 0; transition: border-color 0.2s; }
+  .t-card:hover { border-color: rgba(232,67,45,0.3); }
+  .t-stars { color: #E8432D; font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
+  .t-quote { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .t-quote strong { color: var(--text); font-style: normal; }
+  .t-author { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border); padding-top: 16px; }
+  .t-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .t-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .t-role { font-size: 11px; color: var(--muted2); }
+  .t-plan { display: inline-block; font-size: 10px; font-weight: 600; color: #E8432D; background: rgba(232,67,45,0.1); border: 1px solid rgba(232,67,45,0.2); padding: 2px 8px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -733,8 +747,49 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section style="padding: 80px 0; border-top: 1px solid var(--border); background: var(--bg);">
+  <div style="text-align: center; margin-bottom: 40px; padding: 0 5%;">
+    <div class="section-label">Customer stories</div>
+    <h2 class="section-title">Trusted by teams who<br/>can't afford to miss a thing.</h2>
+  </div>
+  <div style="overflow: hidden; position: relative;">
+    <div style="position:absolute;top:0;bottom:0;left:0;width:80px;background:linear-gradient(90deg,var(--bg),transparent);z-index:2;pointer-events:none;"></div>
+    <div style="position:absolute;top:0;bottom:0;right:0;width:80px;background:linear-gradient(270deg,var(--bg),transparent);z-index:2;pointer-events:none;"></div>
+    <div class="t-track" style="display:flex;gap:20px;width:max-content;animation:t-scroll 40s linear infinite;padding:8px 10px;">
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"We used to have someone manually checking emails overnight. <strong>MailOnCall replaced that entirely.</strong> Our on-call engineer gets a call within seconds now."</div><div class="t-author"><div class="t-avatar" style="background:#1e3a5f;color:#60a5fa;">JM</div><div><div class="t-name">James M. <span class="t-plan">Team</span></div><div class="t-role">IT Manager · Blueconnect Solutions</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"Set up in under 10 minutes. <strong>The first real alert came through at 2am</strong> and my phone rang before I even knew the client had emailed. Genuinely impressive."</div><div class="t-author"><div class="t-avatar" style="background:#1a3a2a;color:#4ade80;">SR</div><div><div class="t-name">Sarah R. <span class="t-plan">Pro</span></div><div class="t-role">Freelance Developer · Melbourne</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"Our helpdesk SLA used to get breached overnight constantly. <strong>Since using MailOnCall, we haven't missed a single P1.</strong> The escalation chain works perfectly."</div><div class="t-author"><div class="t-avatar" style="background:#3a1a2a;color:#f472b6;">DK</div><div><div class="t-name">David K. <span class="t-plan">Business</span></div><div class="t-role">Head of Support · Nexus MSP</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"I was sceptical about paying for this when email exists. <strong>Then I missed a $40k contract because I didn't see the email in time.</strong> Never again."</div><div class="t-author"><div class="t-avatar" style="background:#2a2a1a;color:#fbbf24;">TC</div><div><div class="t-name">Tom C. <span class="t-plan">Pro</span></div><div class="t-role">Director · Coastal Consulting</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"The roster system is exactly what we needed. <strong>Different engineers on-call each night, all handled automatically.</strong> No more group chats figuring out whose turn it is."</div><div class="t-author"><div class="t-avatar" style="background:#1a1a3a;color:#a78bfa;">LP</div><div><div class="t-name">Lisa P. <span class="t-plan">Team</span></div><div class="t-role">Operations Lead · CloudServe AU</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"Microsoft OAuth means <strong>our IT admin approved it in one click</strong> and we were live the same afternoon. No security concerns, no long procurement process."</div><div class="t-author"><div class="t-avatar" style="background:#1e3a5f;color:#60a5fa;">AW</div><div><div class="t-name">Alex W. <span class="t-plan">Business</span></div><div class="t-role">CTO · Meridian Capital</div></div></div></div>
+
+      <!-- duplicate set for seamless loop -->
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"We used to have someone manually checking emails overnight. <strong>MailOnCall replaced that entirely.</strong> Our on-call engineer gets a call within seconds now."</div><div class="t-author"><div class="t-avatar" style="background:#1e3a5f;color:#60a5fa;">JM</div><div><div class="t-name">James M. <span class="t-plan">Team</span></div><div class="t-role">IT Manager · Blueconnect Solutions</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"Set up in under 10 minutes. <strong>The first real alert came through at 2am</strong> and my phone rang before I even knew the client had emailed. Genuinely impressive."</div><div class="t-author"><div class="t-avatar" style="background:#1a3a2a;color:#4ade80;">SR</div><div><div class="t-name">Sarah R. <span class="t-plan">Pro</span></div><div class="t-role">Freelance Developer · Melbourne</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"Our helpdesk SLA used to get breached overnight constantly. <strong>Since using MailOnCall, we haven't missed a single P1.</strong> The escalation chain works perfectly."</div><div class="t-author"><div class="t-avatar" style="background:#3a1a2a;color:#f472b6;">DK</div><div><div class="t-name">David K. <span class="t-plan">Business</span></div><div class="t-role">Head of Support · Nexus MSP</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"I was sceptical about paying for this when email exists. <strong>Then I missed a $40k contract because I didn't see the email in time.</strong> Never again."</div><div class="t-author"><div class="t-avatar" style="background:#2a2a1a;color:#fbbf24;">TC</div><div><div class="t-name">Tom C. <span class="t-plan">Pro</span></div><div class="t-role">Director · Coastal Consulting</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"The roster system is exactly what we needed. <strong>Different engineers on-call each night, all handled automatically.</strong> No more group chats figuring out whose turn it is."</div><div class="t-author"><div class="t-avatar" style="background:#1a1a3a;color:#a78bfa;">LP</div><div><div class="t-name">Lisa P. <span class="t-plan">Team</span></div><div class="t-role">Operations Lead · CloudServe AU</div></div></div></div>
+
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-quote">"Microsoft OAuth means <strong>our IT admin approved it in one click</strong> and we were live the same afternoon. No security concerns, no long procurement process."</div><div class="t-author"><div class="t-avatar" style="background:#1e3a5f;color:#60a5fa;">AW</div><div><div class="t-name">Alex W. <span class="t-plan">Business</span></div><div class="t-role">CTO · Meridian Capital</div></div></div></div>
+
+    </div>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
+
   <div class="pricing-inner">
     <div class="pricing-header fade-in">
       <div class="section-label">Pricing</div>
