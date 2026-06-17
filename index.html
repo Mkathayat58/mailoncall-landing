@@ -42,7 +42,7 @@
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; padding-bottom: 110px; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
   /* ── NAV ── */
   nav {
@@ -116,21 +116,15 @@
   .section-sub { font-size: 17px; font-weight: 300; color: var(--muted); max-width: 520px; line-height: 1.7; }
 
   /* ── FLOATING CREDIBILITY BAR — scrolling marquee ── */
-  .cred-bar {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(1400px, calc(100% - 40px));
-    z-index: 9999;
-    background: rgba(17,17,17,0.92);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 18px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.03);
-    overflow: hidden;
-  }
+ .cred-bar {
+  background: rgba(17,17,17,0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  position: relative;
+}
   /* red tint on edges */
   .cred-bar::before {
     content: '';
