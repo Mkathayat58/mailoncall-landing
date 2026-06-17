@@ -9,11 +9,11 @@
 <meta property="og:url"         content="https://www.mailoncall.net/"/>
 <meta property="og:title"       content="MailOnCall — Never Miss a Critical Email Again"/>
 <meta property="og:description" content="Set a rule. Get the call. Never be caught off guard. Monitor your Outlook inbox and get a phone call the moment a critical email arrives. Start free — no card needed."/>
-<meta property="og:image"       content="https://www.mailoncall.net/og-image.png.png"/>
+<meta property="og:image"       content="https://www.mailoncall.net/og-image.png"/>
 <meta name="twitter:card"        content="summary_large_image"/>
 <meta name="twitter:title"       content="MailOnCall — Never Miss a Critical Email Again"/>
 <meta name="twitter:description" content="Set a rule. Get the call. Never be caught off guard. Monitor your Outlook inbox and get a phone call the moment a critical email arrives."/>
-<meta name="twitter:image"       content="https://www.mailoncall.net/og-image.png.png"/>
+<meta name="twitter:image"       content="https://www.mailoncall.net/og-image.png"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CCK459JBMN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -42,7 +42,7 @@
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; padding-bottom: 110px; }
 
   /* ── NAV ── */
   nav {
@@ -54,7 +54,7 @@
     backdrop-filter: blur(20px);
   }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .logo-icon { width: 36px; height: 36px; border-radius: 9px; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .logo-icon { width: 36px; height: 36px; border-radius: 9px; background: var(--red); display: flex; align-items: center; justify-content: center; }
   .logo-text { font-weight: 600; font-size: 17px; color: var(--text); letter-spacing: -0.3px; }
   .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
@@ -86,7 +86,7 @@
   .phone-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 28px 32px; max-width: 380px; margin: 0 auto; text-align: left; position: relative; }
   .phone-card::before { content: ''; position: absolute; inset: -1px; border-radius: 21px; background: linear-gradient(135deg, rgba(232,67,45,0.3), transparent 60%); z-index: -1; }
   .call-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-  .call-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .call-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .call-info h4 { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
   .call-info p { font-size: 12px; color: var(--muted); }
   .call-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #4ade80; margin-bottom: 16px; }
@@ -115,131 +115,88 @@
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px,4vw,52px); font-weight: 700; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
   .section-sub { font-size: 17px; font-weight: 300; color: var(--muted); max-width: 520px; line-height: 1.7; }
 
- ```css
-/* ── FLOATING CREDIBILITY BAR ───────────────────────────── */
-
-.cred-bar {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1400px, calc(100% - 40px));
-
-  z-index: 9999;
-
-  background: rgba(17,17,17,0.92);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 18px;
-
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.45),
-    0 0 0 1px rgba(255,255,255,0.03);
-
-  overflow: hidden;
-}
-
-.cred-bar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(232,67,45,0.08),
-      transparent 20%,
-      transparent 80%,
-      rgba(232,67,45,0.08)
-    );
-  pointer-events: none;
-}
-
-.cred-inner {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 18px 30px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.cred-inner::-webkit-scrollbar {
-  display: none;
-}
-
-.cred-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-  border-right: 1px solid rgba(255,255,255,0.06);
-  padding-right: 40px;
-}
-
-.cred-item:last-child {
-  border-right: none;
-  padding-right: 0;
-}
-
-.cred-icon {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 12px;
-
-  background: rgba(232,67,45,0.12);
-  border: 1px solid rgba(232,67,45,0.25);
-
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.cred-value {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.2;
-}
-
-.cred-label {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-/* Prevent content hiding behind floating bar */
-body {
-  padding-bottom: 110px;
-}
-
-@media (max-width: 768px) {
-
+  /* ── FLOATING CREDIBILITY BAR — scrolling marquee ── */
   .cred-bar {
-    bottom: 12px;
-    width: calc(100% - 20px);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, calc(100% - 40px));
+    z-index: 9999;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.03);
+    overflow: hidden;
   }
-
-  .cred-inner {
-    gap: 24px;
-    padding: 14px 20px;
+  /* red tint on edges */
+  .cred-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(232,67,45,0.08), transparent 20%, transparent 80%, rgba(232,67,45,0.08));
+    pointer-events: none;
+    z-index: 2;
   }
-
+  /* fade-out mask on left/right so items disappear smoothly */
+  .cred-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      rgba(17,17,17,0.9) 0%,
+      transparent 6%,
+      transparent 94%,
+      rgba(17,17,17,0.9) 100%
+    );
+    pointer-events: none;
+    z-index: 3;
+  }
+  .cred-track-outer {
+    overflow: hidden;
+    width: 100%;
+  }
+  .cred-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: cred-scroll 30s linear infinite;
+  }
+  .cred-track:hover { animation-play-state: paused; }
+  @keyframes cred-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
   .cred-item {
-    border-right: none;
-    padding-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    padding: 18px 36px;
+    border-right: 1px solid rgba(255,255,255,0.06);
   }
-
   .cred-icon {
-    width: 34px;
-    height: 34px;
-    font-size: 15px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(232,67,45,0.12);
+    border: 1px solid rgba(232,67,45,0.25);
+    flex-shrink: 0;
+    color: #E8432D;
   }
-}
+  .cred-value { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.2; white-space: nowrap; }
+  .cred-label { font-size: 11px; color: var(--muted); white-space: nowrap; }
+
+  @media (max-width: 768px) {
+    .cred-bar { bottom: 12px; width: calc(100% - 20px); }
+    .cred-icon { width: 34px; height: 34px; }
+    .cred-item { padding: 14px 24px; }
+  }
 
   /* ── HOW IT WORKS ── */
   .how { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg2); }
@@ -248,7 +205,7 @@ body {
   .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
   .step { background: var(--bg2); padding: 40px 36px; }
   .step-num { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; color: var(--border); line-height: 1; margin-bottom: 20px; display: block; }
-  .step-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+  .step-icon { width: 36px; height: 36px; margin-bottom: 16px; display: block; color: var(--red); }
   .step h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
   .step p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
@@ -258,7 +215,7 @@ body {
   .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
   .feature-card { background: var(--bg); padding: 36px 32px; transition: background 0.3s; }
   .feature-card:hover { background: var(--bg3); }
-  .feature-icon { width: 44px; height: 44px; border-radius: 11px; background: var(--red-soft); border: 1px solid rgba(232,67,45,0.2); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; }
+  .feature-icon { width: 44px; height: 44px; border-radius: 11px; background: var(--red-soft); border: 1px solid rgba(232,67,45,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--red); }
   .feature-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 10px; }
   .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
@@ -290,16 +247,9 @@ body {
   .faq-inner { max-width: 1100px; margin: 0 auto; }
   .faq-header { text-align: center; margin-bottom: 64px; }
   .faq-header .section-sub { margin: 0 auto; }
-
-  .faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
   .faq-category { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-  .faq-category-title { font-size: 13px; font-weight: 600; color: var(--text); padding: 16px 24px; margin: 0; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); letter-spacing: 0.02em; text-transform: uppercase; letter-spacing: 1px; }
+  .faq-category-title { font-size: 13px; font-weight: 600; color: var(--text); padding: 16px 24px; margin: 0; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); text-transform: uppercase; letter-spacing: 1px; }
   .faq-item { border-bottom: 1px solid var(--border); }
   .faq-item:last-child { border-bottom: none; }
   .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 24px; background: none; border: none; color: var(--text); font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; text-align: left; transition: color 0.2s, background 0.2s; }
@@ -313,7 +263,6 @@ body {
   .faq-answer ul, .faq-answer ol { font-size: 13px; color: var(--muted); line-height: 1.8; margin: 8px 0 0 16px; }
   .faq-answer strong { color: var(--text); }
   @keyframes fadeDown { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
-
   .faq-contact { margin-top: 48px; display: flex; align-items: center; justify-content: space-between; padding: 32px 40px; background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; gap: 24px; }
   .faq-contact-text h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
   .faq-contact-text p { font-size: 14px; color: var(--muted); }
@@ -329,7 +278,7 @@ body {
   .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
   .footer-brand { display: flex; flex-direction: column; gap: 12px; }
   .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .footer-logo-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .footer-logo-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--red); display: flex; align-items: center; justify-content: center; }
   .footer-logo span { font-size: 14px; font-weight: 500; color: var(--text); }
   .footer-tagline { font-size: 12px; color: var(--muted2); max-width: 200px; line-height: 1.6; }
   .footer-nav { display: flex; gap: 48px; flex-wrap: wrap; }
@@ -369,8 +318,6 @@ body {
     .footer-top { flex-direction: column; gap: 32px; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .faq-contact { flex-direction: column; text-align: center; }
-    .cred-item { border-right: none; border-bottom: 1px solid var(--border); width: 100%; justify-content: center; }
-    .cred-item:last-child { border-bottom: none; }
   }
 </style>
 </head>
@@ -379,7 +326,9 @@ body {
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <div class="logo-icon">⚡</div>
+    <div class="logo-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    </div>
     <span class="logo-text">MailOnCall</span>
   </a>
   <ul class="nav-links">
@@ -416,7 +365,9 @@ body {
   <div class="hero-visual">
     <div class="phone-card">
       <div class="call-header">
-        <div class="call-icon">📞</div>
+        <div class="call-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
         <div class="call-info">
           <h4>Incoming call</h4>
           <p>MailOnCall Alert · Now</p>
@@ -428,7 +379,7 @@ body {
       </div>
       <div class="email-preview">
         <div class="from">From: cfo@meridian-capital.com.au</div>
-        <div class="subject">⚡ URGENT: Contract approval needed today</div>
+        <div class="subject">URGENT: Contract approval needed today</div>
         <div class="preview-text">Please review and sign before end of business. The deal closes at 5pm…</div>
       </div>
       <div class="wave-bars">
@@ -439,49 +390,59 @@ body {
   </div>
 </section>
 
-<!-- CREDIBILITY BAR -->
+<!-- CREDIBILITY BAR — scrolling marquee -->
 <div class="cred-bar">
-  <div class="cred-inner">
-    <div class="cred-item">
-      <div class="cred-icon">⚡</div>
-      <div>
-        <div class="cred-value">Under 10 seconds</div>
-        <div class="cred-label">Call delivery time</div>
+  <div class="cred-track-outer">
+    <div class="cred-track">
+      <!-- set 1 -->
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div><div class="cred-value">Under 10 seconds</div><div class="cred-label">Call delivery time</div></div>
       </div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-icon">🔒</div>
-      <div>
-        <div class="cred-value">OAuth 2.0</div>
-        <div class="cred-label">Microsoft-secured access</div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <div><div class="cred-value">OAuth 2.0</div><div class="cred-label">Microsoft-secured access</div></div>
       </div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-icon">📞</div>
-      <div>
-        <div class="cred-value">Powered by Twilio</div>
-        <div class="cred-label">Global call coverage</div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><div class="cred-value">Powered by Twilio</div><div class="cred-label">Global call coverage</div></div>
       </div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-icon">🖥️</div>
-      <div>
-        <div class="cred-value">Microsoft Graph API</div>
-        <div class="cred-label">Direct Outlook integration</div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <div><div class="cred-value">Microsoft Graph API</div><div class="cred-label">Direct Outlook integration</div></div>
       </div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-icon">⏱️</div>
-      <div>
-        <div class="cred-value">5 minutes</div>
-        <div class="cred-label">Average setup time</div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="cred-value">5 minutes</div><div class="cred-label">Average setup time</div></div>
       </div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-icon">🛡️</div>
-      <div>
-        <div class="cred-value">2FA Billing Protection</div>
-        <div class="cred-label">SMS + email verification</div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="cred-value">2FA Billing Protection</div><div class="cred-label">SMS + email verification</div></div>
+      </div>
+      <!-- set 2 — exact duplicate for seamless loop -->
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div><div class="cred-value">Under 10 seconds</div><div class="cred-label">Call delivery time</div></div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <div><div class="cred-value">OAuth 2.0</div><div class="cred-label">Microsoft-secured access</div></div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><div class="cred-value">Powered by Twilio</div><div class="cred-label">Global call coverage</div></div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <div><div class="cred-value">Microsoft Graph API</div><div class="cred-label">Direct Outlook integration</div></div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="cred-value">5 minutes</div><div class="cred-label">Average setup time</div></div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="cred-value">2FA Billing Protection</div><div class="cred-label">SMS + email verification</div></div>
       </div>
     </div>
   </div>
@@ -507,14 +468,20 @@ body {
       <div style="display:flex;height:460px;">
         <div style="width:195px;flex-shrink:0;background:#080808;border-right:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;">
           <div style="display:flex;align-items:center;gap:9px;padding:16px 14px;border-bottom:1px solid rgba(255,255,255,0.05);">
-            <div style="width:28px;height:28px;background:#E8432D;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;">⚡</div>
+            <div style="width:28px;height:28px;background:#E8432D;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
             <span style="font-size:13px;font-weight:600;color:#f0ede8;">MailOnCall</span>
           </div>
           <div style="padding:12px 10px 4px;font-size:9px;color:#333;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;">Workspace</div>
-          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;background:rgba(255,255,255,0.04);border-left:2px solid #E8432D;color:#f0ede8;font-size:12px;">📊 Overview</div>
-          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">🔔 Alert History</div>
-          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">📞 Phone calls</div>
-          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">⚙️ Alert rules</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;background:rgba(255,255,255,0.04);border-left:2px solid #E8432D;color:#f0ede8;font-size:12px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8432D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Overview</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg> Alert History</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Phone calls</div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 14px;color:#333;font-size:12px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg> Alert rules</div>
           <div style="flex:1;"></div>
           <div style="padding:12px 14px;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:9px;">
             <div style="width:26px;height:26px;background:#1e3a5f;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#60a5fa;flex-shrink:0;">JD</div>
@@ -605,7 +572,10 @@ body {
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
               <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
-                <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;"><span>🔔</span><span style="font-size:12px;font-weight:600;color:#e8e6e1;">Recent alerts</span></div>
+                <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8432D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                  <span style="font-size:12px;font-weight:600;color:#e8e6e1;">Recent alerts</span>
+                </div>
                 <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
                   <div style="width:6px;height:6px;border-radius:50%;background:#E8432D;flex-shrink:0;"></div>
                   <div style="flex:1;min-width:0;"><div style="font-size:11px;color:#e8e6e1;font-weight:500;">P1/P2 Critical Alerts</div><div style="font-size:10px;color:#444;">Helpdesk · 3:05 PM</div></div>
@@ -618,7 +588,10 @@ body {
                 </div>
               </div>
               <div style="background:#080808;border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;">
-                <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;"><span>📞</span><span style="font-size:12px;font-weight:600;color:#e8e6e1;">Recent calls</span></div>
+                <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8432D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                  <span style="font-size:12px;font-weight:600;color:#e8e6e1;">Recent calls</span>
+                </div>
                 <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
                   <div style="width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;"></div>
                   <div style="flex:1;min-width:0;"><div style="font-size:11px;color:#e8e6e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">P1 Alert: Triage — server outage</div><div style="font-size:10px;color:#444;">+61 4•• ••• •15 · 3:05 PM</div></div>
@@ -649,19 +622,19 @@ body {
     <div class="steps fade-in">
       <div class="step">
         <span class="step-num">01</span>
-        <span class="step-icon">🔗</span>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
         <h3>Connect your Outlook</h3>
         <p>Sign in with your Microsoft account. MailOnCall connects securely via Microsoft Graph — no passwords stored, ever.</p>
       </div>
       <div class="step">
         <span class="step-num">02</span>
-        <span class="step-icon">⚙️</span>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="18" y2="18"/></svg>
         <h3>Set your alert rules</h3>
         <p>Define what matters — by sender, subject keywords, or urgency flags. Your rules, your priorities.</p>
       </div>
       <div class="step">
         <span class="step-num">03</span>
-        <span class="step-icon">📲</span>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         <h3>Get the call</h3>
         <p>The moment a matching email arrives, your phone rings. A clear voice reads you the sender, subject, and preview. Instantly.</p>
       </div>
@@ -679,32 +652,32 @@ body {
     </div>
     <div class="features-grid fade-in">
       <div class="feature-card">
-        <div class="feature-icon">📞</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
         <h3>Instant phone call</h3>
         <p>Your phone rings within seconds of a matching email arriving. Works on any phone number worldwide.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🎯</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
         <h3>Precision rules engine</h3>
         <p>Filter by sender, domain, subject keywords, or any combination. Only hear about what truly matters.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔒</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
         <h3>Enterprise-grade security</h3>
         <p>OAuth 2.0 via Microsoft. bcrypt, JWT, TLS. No email content stored. Auditable and secure.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
         <h3>Live dashboard</h3>
         <p>See all alerts, calls, and rule matches in one clean view. Full history, exportable logs.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🌍</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
         <h3>Global phone coverage</h3>
         <p>Powered by Twilio. Calls reach any number, in any country. Never tied to a single carrier.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⚡</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <h3>Always on, always watching</h3>
         <p>Continuous inbox monitoring via Microsoft Graph webhooks. Detects emails the moment they land.</p>
       </div>
@@ -722,32 +695,32 @@ body {
     </div>
     <div class="features-grid fade-in">
       <div class="feature-card">
-        <div class="feature-icon">👥</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
         <h3>Team roster management</h3>
         <p>Set up who is on-call for each day and time slot. The system automatically calls the right person at the right time.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📬</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <h3>Shared mailbox support</h3>
         <p>Connect a shared Outlook mailbox like oncall@company.com. One connection covers your entire team.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔺</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></div>
         <h3>3-level escalation</h3>
         <p>Primary doesn't answer? Automatically escalates to secondary, then tertiary. Nobody gets left behind.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔄</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div>
         <h3>Automatic retry</h3>
         <p>Retries up to 5x before escalating. Configurable retry intervals per escalation level.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">✅</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         <h3>SMS acknowledgement</h3>
         <p>On-call staff receive an SMS with a one-click acknowledge link. Stops retries instantly when tapped.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📋</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
         <h3>Full audit trail</h3>
         <p>Every alert, call, and acknowledgement logged with timestamps. Compliance-ready reporting.</p>
       </div>
@@ -757,7 +730,7 @@ body {
         <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Perfect for MSPs and IT helpdesks</h3>
         <p style="color: var(--muted); font-size: 14px; line-height: 1.7; max-width: 560px;">Stop relying on manual email checks for after-hours support. MailOnCall monitors your shared mailbox and calls your on-call staff automatically — so critical issues never wait until morning.</p>
         <div style="margin-top: 16px; padding: 12px 16px; background: rgba(232,67,45,0.06); border: 1px solid rgba(232,67,45,0.15); border-radius: 8px; display: inline-block;">
-          <p style="font-size: 12px; color: var(--muted); margin: 0 0 4px;">🏢 <strong style="color: var(--text);">Using a corporate Outlook account?</strong></p>
+          <p style="font-size: 12px; color: var(--muted); margin: 0 0 4px;"><strong style="color: var(--text);">Using a corporate Outlook account?</strong></p>
           <a href="https://login.microsoftonline.com/common/adminconsent?client_id=6c5a1107-05aa-4989-b416-7621b2c9bde6" style="font-size: 12px; color: var(--red); text-decoration: none; font-weight: 500;">Request IT admin approval →</a>
         </div>
       </div>
@@ -845,132 +818,54 @@ body {
       <h2 class="section-title">Frequently asked questions</h2>
       <p class="section-sub">Everything you need to know about MailOnCall.</p>
     </div>
-
     <div class="faq-grid fade-in">
-
       <!-- LEFT COLUMN -->
       <div style="display: flex; flex-direction: column; gap: 24px;">
-
         <div class="faq-category">
-          <h3 class="faq-category-title">🚀 Getting Started</h3>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Does MailOnCall work with Gmail or only Outlook?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Currently MailOnCall works exclusively with <strong>Microsoft Outlook</strong> — including personal accounts (outlook.com, hotmail.com) and business Microsoft 365 accounts. We integrate via the Microsoft Graph API for real-time monitoring.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">How do I set up my first alert rule?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Setup takes under 5 minutes: sign up → connect Outlook via Microsoft login → create a rule with your conditions → enter your phone number → hit Test. That's it.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Do I need to install anything?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Nothing to install. MailOnCall is entirely web-based at <strong>app.mailoncall.net</strong>. Calls go to your existing phone number — no app needed on your mobile.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Can I test a rule before it goes live?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — every rule has a <strong>Test ▷</strong> button that fires a real call and SMS to your configured number immediately so you can verify everything works.</p></div>
-          </div>
+          <h3 class="faq-category-title">Getting Started</h3>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Does MailOnCall work with Gmail or only Outlook?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Currently MailOnCall works exclusively with <strong>Microsoft Outlook</strong> — including personal accounts (outlook.com, hotmail.com) and business Microsoft 365 accounts. We integrate via the Microsoft Graph API for real-time monitoring.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How do I set up my first alert rule?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Setup takes under 5 minutes: sign up → connect Outlook via Microsoft login → create a rule with your conditions → enter your phone number → hit Test. That's it.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do I need to install anything?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Nothing to install. MailOnCall is entirely web-based at <strong>app.mailoncall.net</strong>. Calls go to your existing phone number — no app needed on your mobile.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I test a rule before it goes live?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — every rule has a <strong>Test ▷</strong> button that fires a real call and SMS to your configured number immediately so you can verify everything works.</p></div></div>
         </div>
-
         <div class="faq-category">
-          <h3 class="faq-category-title">⚙️ Alert Rules</h3>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">What conditions can I filter by?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Filter by <strong>sender email</strong>, <strong>sender domain</strong>, <strong>subject keywords</strong>, or <strong>body keywords</strong>. Combine conditions with AND or OR logic for precise targeting.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">How many alert rules can I create?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p><strong>Starter:</strong> up to 3 rules. <strong>Pro, Team, Business:</strong> unlimited rules.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Can I pause a rule without deleting it?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — every rule has a toggle. Turn it off to pause, back on to resume. Paused rules don't fire alerts.</p></div>
-          </div>
+          <h3 class="faq-category-title">Alert Rules</h3>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What conditions can I filter by?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Filter by <strong>sender email</strong>, <strong>sender domain</strong>, <strong>subject keywords</strong>, or <strong>body keywords</strong>. Combine conditions with AND or OR logic for precise targeting.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How many alert rules can I create?<span class="faq-icon">+</span></button><div class="faq-answer"><p><strong>Starter:</strong> up to 3 rules. <strong>Pro, Team, Business:</strong> unlimited rules.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I pause a rule without deleting it?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — every rule has a toggle. Turn it off to pause, back on to resume. Paused rules don't fire alerts.</p></div></div>
         </div>
-
         <div class="faq-category">
-          <h3 class="faq-category-title">💳 Plans & Billing</h3>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Is the Starter plan really free forever?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — <strong>completely free, no time limit, no credit card required</strong>. 1 mailbox and up to 3 alert rules at no cost.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Can I cancel anytime?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — no lock-in, no cancellation fees. Cancel from Settings → Billing. Your plan stays active until the billing period ends, then drops to Starter.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Are prices in Australian Dollars?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — all prices are in <strong>AUD</strong>. GST is not included. International customers are charged in AUD at their bank's exchange rate.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Do you offer refunds?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>We don't refund partial months. If a technical issue prevented you from using the service, email <a href="mailto:support@mailoncall.net" style="color:var(--red);">support@mailoncall.net</a> and we'll review your case.</p></div>
-          </div>
+          <h3 class="faq-category-title">Plans &amp; Billing</h3>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Is the Starter plan really free forever?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — <strong>completely free, no time limit, no credit card required</strong>. 1 mailbox and up to 3 alert rules at no cost.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I cancel anytime?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — no lock-in, no cancellation fees. Cancel from Settings → Billing. Your plan stays active until the billing period ends, then drops to Starter.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Are prices in Australian Dollars?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — all prices are in <strong>AUD</strong>. GST is not included. International customers are charged in AUD at their bank's exchange rate.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you offer refunds?<span class="faq-icon">+</span></button><div class="faq-answer"><p>We don't refund partial months. If a technical issue prevented you from using the service, email <a href="mailto:support@mailoncall.net" style="color:var(--red);">support@mailoncall.net</a> and we'll review your case.</p></div></div>
         </div>
-
       </div>
-
       <!-- RIGHT COLUMN -->
       <div style="display: flex; flex-direction: column; gap: 24px;">
-
         <div class="faq-category">
-          <h3 class="faq-category-title">📞 How It Works</h3>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">How quickly does the call arrive?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Microsoft Graph API webhooks detect emails in real time — typically <strong>within 10 seconds</strong>. Twilio then places the call immediately. Phone to ring: usually <strong>under 30 seconds</strong> total.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">What happens if I miss the call?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p><strong>Starter:</strong> one attempt, no retries. <strong>Pro:</strong> up to 3 retries at 5-min intervals. <strong>Team/Business:</strong> custom intervals + escalation to secondary and tertiary contacts. Voicemail is detected automatically.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">What does the call say?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>An automated voice reads the sender's email address and the subject line. Uses Amazon Polly's natural-sounding voice — clear and easy to understand.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Can I stop retries once I've seen the email?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — the SMS alert includes a one-tap <strong>Acknowledge</strong> link. Tapping it stops all further retries instantly. Available on Pro, Team and Business plans.</p></div>
-          </div>
+          <h3 class="faq-category-title">How It Works</h3>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How quickly does the call arrive?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Microsoft Graph API webhooks detect emails in real time — typically <strong>within 10 seconds</strong>. Twilio then places the call immediately. Phone to ring: usually <strong>under 30 seconds</strong> total.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What happens if I miss the call?<span class="faq-icon">+</span></button><div class="faq-answer"><p><strong>Starter:</strong> one attempt, no retries. <strong>Pro:</strong> up to 3 retries at 5-min intervals. <strong>Team/Business:</strong> custom intervals + escalation to secondary and tertiary contacts. Voicemail is detected automatically.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What does the call say?<span class="faq-icon">+</span></button><div class="faq-answer"><p>An automated voice reads the sender's email address and the subject line. Uses Amazon Polly's natural-sounding voice — clear and easy to understand.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I stop retries once I've seen the email?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — the SMS alert includes a one-tap <strong>Acknowledge</strong> link. Tapping it stops all further retries instantly. Available on Pro, Team and Business plans.</p></div></div>
         </div>
-
         <div class="faq-category">
-          <h3 class="faq-category-title">🔒 Security & Privacy</h3>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Is my email content stored?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p><strong>No.</strong> We read only the sender and subject to generate the voice message — in real time, not stored. We never store email body content.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">How does MailOnCall access my inbox?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Via <strong>Microsoft OAuth 2.0</strong> — your password is never shared or stored. You grant read-only permissions and can revoke access anytime from your Microsoft account.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">My IT admin needs to approve the app first.<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Common in corporate Microsoft 365 environments. Send your IT admin this one-click link — approves MailOnCall for your whole organisation in seconds:</p><a href="https://login.microsoftonline.com/common/adminconsent?client_id=6c5a1107-05aa-4989-b416-7621b2c9bde6" style="display:inline-block;margin-top:10px;padding:8px 14px;background:var(--red-soft);border:1px solid rgba(232,67,45,0.3);border-radius:7px;color:var(--red);font-size:12px;text-decoration:none;font-weight:500;">Request admin approval →</a></div>
-          </div>
+          <h3 class="faq-category-title">Security &amp; Privacy</h3>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Is my email content stored?<span class="faq-icon">+</span></button><div class="faq-answer"><p><strong>No.</strong> We read only the sender and subject to generate the voice message — in real time, not stored. We never store email body content.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How does MailOnCall access my inbox?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Via <strong>Microsoft OAuth 2.0</strong> — your password is never shared or stored. You grant read-only permissions and can revoke access anytime from your Microsoft account.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">My IT admin needs to approve the app first.<span class="faq-icon">+</span></button><div class="faq-answer"><p>Common in corporate Microsoft 365 environments. Send your IT admin this one-click link — approves MailOnCall for your whole organisation in seconds:</p><a href="https://login.microsoftonline.com/common/adminconsent?client_id=6c5a1107-05aa-4989-b416-7621b2c9bde6" style="display:inline-block;margin-top:10px;padding:8px 14px;background:var(--red-soft);border:1px solid rgba(232,67,45,0.3);border-radius:7px;color:var(--red);font-size:12px;text-decoration:none;font-weight:500;">Request admin approval →</a></div></div>
         </div>
-
         <div class="faq-category">
-          <h3 class="faq-category-title">👥 Teams & Business</h3>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Can multiple people receive calls from one alert?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — Team and Business plans support escalation chains: primary → secondary → tertiary. You can also set on-call rosters so the right person is called based on day and time.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Can I connect a shared Outlook mailbox?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — Team and Business support shared mailboxes (e.g. helpdesk@company.com). One connection covers the whole inbox with configurable rules and rosters.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Does MailOnCall work internationally?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — powered by Twilio with coverage in <strong>180+ countries</strong>. Any phone number, anywhere.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">Can I delete my account and all my data?<span class="faq-icon">+</span></button>
-            <div class="faq-answer"><p>Yes — Settings → Your Data → Delete account. Permanent deletion after a 30-day cooling period, compliant with GDPR Article 17.</p></div>
-          </div>
+          <h3 class="faq-category-title">Teams &amp; Business</h3>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can multiple people receive calls from one alert?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — Team and Business plans support escalation chains: primary → secondary → tertiary. You can also set on-call rosters so the right person is called based on day and time.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I connect a shared Outlook mailbox?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — Team and Business support shared mailboxes (e.g. helpdesk@company.com). One connection covers the whole inbox with configurable rules and rosters.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Does MailOnCall work internationally?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — powered by Twilio with coverage in <strong>180+ countries</strong>. Any phone number, anywhere.</p></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I delete my account and all my data?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — Settings → Your Data → Delete account. Permanent deletion after a 30-day cooling period, compliant with GDPR Article 17.</p></div></div>
         </div>
-
       </div>
     </div>
-
     <div class="faq-contact fade-in">
       <div class="faq-contact-text">
         <h3>Still have questions?</h3>
@@ -995,12 +890,13 @@ body {
   <div class="footer-top">
     <div class="footer-brand">
       <a href="/" class="footer-logo">
-        <div class="footer-logo-icon">⚡</div>
+        <div class="footer-logo-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
         <span>MailOnCall</span>
       </a>
       <p class="footer-tagline">Never miss a critical email again. Monitor your Outlook inbox 24/7.</p>
     </div>
-
     <div class="footer-nav">
       <div class="footer-nav-group">
         <span class="footer-nav-label">Product</span>
@@ -1022,7 +918,6 @@ body {
         <a href="/privacy.html">Privacy policy</a>
       </div>
     </div>
-
     <div class="footer-social">
       <span class="footer-social-label">Follow us</span>
       <div class="footer-social-icons">
@@ -1035,7 +930,6 @@ body {
       </div>
     </div>
   </div>
-
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 MailOnCall. All rights reserved. · <a href="mailto:support@mailoncall.net">support@mailoncall.net</a></p>
     <div class="footer-legal">
@@ -1062,15 +956,15 @@ body {
     } catch {}
   }
   loadLiveStats();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  
-// ── Incident log animation ───────────────────────────────────────────────
+
   function animateLog() {
     const entries = document.querySelectorAll('.log-entry');
-    const bar     = document.querySelector('.log-response-bar');
+    const bar = document.querySelector('.log-response-bar');
     if (!entries.length) return;
     entries.forEach(e => e.style.opacity = '0');
     if (bar) bar.style.opacity = '0';
