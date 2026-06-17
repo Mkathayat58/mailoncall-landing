@@ -66,8 +66,16 @@
   .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
 
   /* ── HERO ── */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 5% 80px; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: 20%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%); pointer-events: none; }
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 5% 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 20%; left: 0; width: 600px; height: 600px; background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%); pointer-events: none; }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; max-width: 1100px; margin: 0 auto; }
+  .hero-left { display: flex; flex-direction: column; align-items: flex-start; }
+  .hero-right { display: flex; justify-content: center; align-items: center; }
+  .hero h1 { text-align: left; }
+  .hero-sub { text-align: left; }
+  .hero-actions { justify-content: flex-start; }
+  .hero-trust { justify-content: flex-start; }
+  @media (max-width: 768px) { .hero-inner { grid-template-columns: 1fr; } .hero { text-align: center; } .hero-left { align-items: center; } .hero h1, .hero-sub { text-align: center; } .hero-actions, .hero-trust { justify-content: center; } }
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--red-soft); border: 1px solid rgba(232,67,45,0.3); color: #f07060; font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 999px; margin-bottom: 40px; letter-spacing: 0.5px; animation: fadeUp 0.6s ease both; }
   .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.8); } }
@@ -354,45 +362,49 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">
-    <div class="badge-dot"></div>
-    Trusted by professionals worldwide
-  </div>
-  <h1>Never miss a<br/><em>critical</em> email<br/>again.</h1>
-  <p class="hero-sub">MailOnCall monitors your Outlook inbox and calls your phone the moment an email that matters arrives. No delays. No distractions. Just the call.</p>
-  <div class="hero-actions">
-    <a href="https://app.mailoncall.net/login?signup=true" class="btn-large">Start free — no card needed</a>
-    <a href="#how" class="btn-outline">See how it works →</a>
-  </div>
-  <div class="hero-trust">
-    <span class="trust-item">Free forever plan</span>
-    <span class="trust-item">Microsoft Outlook ready</span>
-    <span class="trust-item">Phone call in seconds</span>
-    <span class="trust-item">Cancel anytime</span>
-  </div>
-  <div class="hero-visual">
-    <div class="phone-card">
-      <div class="call-header">
-        <div class="call-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        Trusted by professionals worldwide
+      </div>
+      <h1>Never miss a<br/><em>critical</em> email<br/>again.</h1>
+      <p class="hero-sub">MailOnCall monitors your Outlook inbox and calls your phone the moment an email that matters arrives. No delays. No distractions. Just the call.</p>
+      <div class="hero-actions">
+        <a href="https://app.mailoncall.net/login?signup=true" class="btn-large">Start free — no card needed</a>
+        <a href="#how" class="btn-outline">See how it works →</a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-item">Free forever plan</span>
+        <span class="trust-item">Microsoft Outlook ready</span>
+        <span class="trust-item">Phone call in seconds</span>
+        <span class="trust-item">Cancel anytime</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="phone-card">
+        <div class="call-header">
+          <div class="call-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="call-info">
+            <h4>Incoming call</h4>
+            <p>MailOnCall Alert · Now</p>
+          </div>
         </div>
-        <div class="call-info">
-          <h4>Incoming call</h4>
-          <p>MailOnCall Alert · Now</p>
+        <div class="call-status">
+          <div class="status-dot"></div>
+          Call in progress…
         </div>
-      </div>
-      <div class="call-status">
-        <div class="status-dot"></div>
-        Call in progress…
-      </div>
-      <div class="email-preview">
-        <div class="from">From: cfo@meridian-capital.com.au</div>
-        <div class="subject">URGENT: Contract approval needed today</div>
-        <div class="preview-text">Please review and sign before end of business. The deal closes at 5pm…</div>
-      </div>
-      <div class="wave-bars">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
+        <div class="email-preview">
+          <div class="from">From: cfo@meridian-capital.com.au</div>
+          <div class="subject">URGENT: Contract approval needed today</div>
+          <div class="preview-text">Please review and sign before end of business. The deal closes at 5pm…</div>
+        </div>
+        <div class="wave-bars">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
       </div>
     </div>
   </div>
